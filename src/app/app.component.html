@@ -1,14 +1,19 @@
-<h1>Ecco a voi i giorni</h1>
-
-<div>
-  <div *ngFor="let g of giorni; index as i">
-     <p *ngFor="let p of g.progetti, index as j">
-      {{ j }}
-      {{ g["giorno"] }} 
-      <span *ngIf="g.progetti[j] !== undefined" >
-             {{ g.progetti[j]["codice progetto"] }}
-      </span>
-     
-    </p>
-  </div>
-</div>
+<h1>Rapportini</h1>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Progetto</th>
+    <th *ngFor="let d of giorni_del_mese">
+      <p>{{ d }} </p>
+    </th>
+  </tr>
+  <tr *ngFor="let r of righe">
+    <td>
+      <p>{{ r.progetto.codice }}</p><p>{{ r.progetto.descrizione }}</p>
+    </td>
+    <td *ngFor="let d of r.orari">
+        <span>           
+          {{ d.orario }}
+        </span>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+{"progetti": [
+    {
+        "id": 1,
+        "codice progetto": "ICTP246",
+        "descrizione progetto": "Target 2 Securities"
+    }, 
+    {
+        "id": 2,
+        "codice progetto": "ICTP233",
+        "descrizione progetto": "Target 2"
+    },
+    {
+        "id": 3,
+        "codice progetto": "ICTT002",
+        "descrizione progetto": "Sistemi Intermedi"
+    }
+]
+}
