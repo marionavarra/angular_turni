@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faFileDownload, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,6 @@ import { faFileDownload, faUser } from '@fortawesome/free-solid-svg-icons';
 export class NavbarComponent implements OnInit {
   isNavbarCollapsed=true;
   faUser = faUser;
-  faFileDownload = faFileDownload;
   constructor() { }
 
   ngOnInit(): void {

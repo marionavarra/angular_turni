@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { analyzeAndValidateNgModules, CompileShallowModuleMetadata } from '@angular/compiler';
+import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
 
 const DAY_MS = 60 * 60 * 24 * 1000;
 
@@ -17,6 +18,7 @@ export class WorkSheetComponent implements OnInit {
   progetti: any = [] ;
   orari: any = [] ;
   righe: any = [];
+  faFileDownload = faFileDownload;
 
   constructor(private httpClient: HttpClient){}
   ngOnInit(){ 
