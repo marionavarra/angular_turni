@@ -17,7 +17,25 @@ export class AppComponent implements OnInit {
   progetti: any = [] ;
   orari: any = [] ;
   righe: any = [];
-
+  options = [
+    {id: 1, value: "0:00"},
+    {id: 2, value: "0:30"},
+    {id: 3, value: "1:00"},
+    {id: 4, value: "1:30"},
+    {id: 5, value: "2:00"},
+    {id: 6, value: "2:30"},
+    {id: 7, value: "3:00"},
+    {id: 8, value: "3:30"},
+    {id: 9, value: "4:00"},
+    {id: 10, value: "4:30"},
+    {id: 11, value: "5:00"},
+    {id: 12, value: "5:30"},
+    {id: 13, value: "6:00"},
+    {id: 14, value: "6:30"},
+    {id: 15, value: "7:00"},
+    {id: 16, value: "7:30"},
+    {id: 17, value: "8:00"}
+  ]
   constructor(private httpClient: HttpClient){}
   ngOnInit(){ 
     this.httpClient.get("assets/progetti.json").subscribe((data1: any) =>{this.progetti = data1.progetti})
@@ -79,6 +97,14 @@ export class AppComponent implements OnInit {
     console.log(this.days);
 
 
+  }
+  cambiaOrario(event: any){
+    let selected: string;
+    this.options.forEach((option: {id: number, value: string}) => {
+      if (event.target.value == option.id){
+        console.log(option.value);
+      }
+    });
   }
   getCalendarStartDay(date = new Date) {
     const [year, month] = [date.getFullYear(), date.getMonth()];

@@ -32,3 +32,17 @@ td+td.odd {
   body{
       align-content: center;
   }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    text-indent: 1px;
+    text-overflow: '';
+    
+}
+.select-orario{
+  width: 100%;
+  font-size: .75em;
+  border: 1px;
+  background-color: transparent;
+}

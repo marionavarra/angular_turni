@@ -11,9 +11,9 @@
       <p>{{ r.progetto.codice }}</p><p>{{ r.progetto.descrizione }}</p>
     </td>
     <td *ngFor="let d of r.orari" [ngClass]="{ odd: odd, even: even }">
-        <span  contenteditable="true" (blur)="updateOrario(r.progetto.codice, d, $event)">           
-          {{ d.orario }}
-        </span>
+        <select class="select-orario" (change)='cambiaOrario($event)'>
+          <option *ngFor="let opt of options" [value]="opt.id" [selected]="opt.value == d.orario">{{opt.value}}</option>
+        </select>     
     </td>
   </tr>
 </table>
