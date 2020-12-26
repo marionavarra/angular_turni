@@ -6,6 +6,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WorkSheetComponent } from './work-sheet/work-sheet.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ConsultantsService } from './services/consultants/consultants.service';
+import { ConsultantsFakeService } from './services/consultants/consultants-fake.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgbModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [ { provide: ConsultantsService, useClass: ConsultantsFakeService } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

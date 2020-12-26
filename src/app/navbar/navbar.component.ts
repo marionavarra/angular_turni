@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -8,12 +8,10 @@ import { faSearch, faUser, faUserCircle } from '@fortawesome/free-solid-svg-icon
 })
 export class NavbarComponent implements OnInit {
   isNavbarCollapsed=true;
-  faUser = faUser;
   faUserCircle = faUserCircle;
   faSearch = faSearch;
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
