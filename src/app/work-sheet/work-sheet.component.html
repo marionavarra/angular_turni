@@ -1,7 +1,15 @@
 <div class="d-flex justify-content-center mb-2">
+    <span class="dropdown mr-auto" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>
+            <fa-icon [icon]="faUser"></fa-icon>
+            Consulenti
+        </a>
+        <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
+            <a *ngFor='let c of consultants$ | async' class="dropdown-item" href="#">{{ c.name }}</a>
+        </div>
+    </span>
     <button type="button" class="btn btn-primary">
-        <fa-icon [icon]="faFileDownload"></fa-icon>
-        Stampa Report
+        <fa-icon [icon]="faPrint"></fa-icon>
     </button>
 </div>
 <div>

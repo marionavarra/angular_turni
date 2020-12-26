@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { analyzeAndValidateNgModules, CompileShallowModuleMetadata } from '@angular/compiler';
-import { faFileDownload } from '@fortawesome/free-solid-svg-icons';
+import { faPrint, faUser } from '@fortawesome/free-solid-svg-icons';
+import { ConsultantsService } from '../services/consultants/consultants.service';
+import { Observable } from 'rxjs';
+import { Consultant } from '../model/consultant';
 
 const DAY_MS = 60 * 60 * 24 * 1000;
 
@@ -18,9 +21,11 @@ export class WorkSheetComponent implements OnInit {
   progetti: any = [] ;
   orari: any = [] ;
   righe: any = [];
-  faFileDownload = faFileDownload;
+  faUser = faUser;
+  faPrint = faPrint;
 
-  constructor(private httpClient: HttpClient){}
+  constructor(private httpClient: HttpClient,
+    private consultantsService: ConsultantsService){}
   ngOnInit(){ 
     this.httpClient.get("assets/progetti.json").subscribe((data1: any) =>{this.progetti = data1.progetti})
     this.httpClient.get("assets/test1.json").subscribe((data: any) =>{
@@ -107,6 +112,10 @@ export class WorkSheetComponent implements OnInit {
 
   private range(start: number, end: number, length = end - start + 1) {
     return Array.from({ length }, (_, i) => start + i)
+  }
+
+  public get consultants$(): Observable<Consultant[]> {
+    return this.consultantsService.consultants$;
   }
 }
 

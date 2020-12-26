@@ -7,18 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown" ngbDropdown>
-                    <a class="nav-link dropdown-toggle" id="id01" href="#" ngbDropdownToggle>
-                        <fa-icon [icon]="faUser"></fa-icon>
-                        Consulenti
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
-                        <a *ngFor='let c of consultants$ | async' class="dropdown-item" href="#">{{ c.name }}</a>
-                    </div>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown" ngbDropdown>
                     <a class="nav-link dropdown-toggle" id="usrLgn" href="#" ngbDropdownToggle>
                         <fa-icon class="fa-lg" [icon]="faUserCircle"></fa-icon>
@@ -29,12 +18,14 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Cerca...">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    <fa-icon [icon]="faSearch"></fa-icon>
-                </button>
-            </form>
+            <ul class="navbar-nav">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Cerca...">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        <fa-icon [icon]="faSearch"></fa-icon>
+                    </button>
+                </form>
+            </ul>
         </div>
     </nav>
 </div>
