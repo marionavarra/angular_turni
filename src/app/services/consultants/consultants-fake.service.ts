@@ -13,7 +13,7 @@ const fakeResult: Consultant[] = [
   },
   {
     id: "2",
-    name: "Michele Bianchi"
+    name: "Antonio Bianchi"
   },
 ];
 

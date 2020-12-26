@@ -14,9 +14,7 @@
                         Consulenti
                     </a>
                     <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
-                        <a class="dropdown-item" href="#">Mario Rossi</a>
-                        <a class="dropdown-item" href="#">Giuseppe Verdi</a>
-                        <a class="dropdown-item" href="#">Antonio Bianchi</a>
+                        <a *ngFor='let c of consultants$ | async' class="dropdown-item" href="#">{{ c.name }}</a>
                     </div>
                 </li>
             </ul>
